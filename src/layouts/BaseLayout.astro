@@ -46,5 +46,24 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : Ast
       <slot />
     </main>
     <SiteFooter brandName={brandName} footerText={footerText} />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          const hash = window.location.hash || "";
+          const hasIdentityToken = hash.includes("invite_token=") || hash.includes("recovery_token=");
+
+          if (hasIdentityToken) {
+            window.netlifyIdentity.open();
+          }
+
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              window.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
