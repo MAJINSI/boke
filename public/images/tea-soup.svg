@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">茶汤占位图</title>
+  <desc id="desc">温润棕色茶汤视觉占位</desc>
+  <rect width="1200" height="800" fill="#F3EFE6"/>
+  <rect x="96" y="86" width="1008" height="628" fill="#E7DED0" stroke="#2A2824" stroke-opacity=".12"/>
+  <circle cx="600" cy="400" r="164" fill="#5B3E2A" opacity=".22"/>
+  <circle cx="600" cy="400" r="112" fill="#BFA46A" opacity=".18"/>
+  <circle cx="600" cy="400" r="72" fill="#11100E" opacity=".08"/>
+  <text x="600" y="654" fill="#8C867C" text-anchor="middle" font-family="Georgia,serif" font-size="24" letter-spacing="8">TEA SOUP</text>
+</svg>

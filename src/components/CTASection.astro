@@ -1,0 +1,60 @@
+---
+interface Props {
+  title?: string;
+  body?: string;
+  href?: string;
+  buttonText?: string;
+}
+const {
+  title = "茶席有限。",
+  body = "递交意向后，将根据茶会主题、席位与时间发送确认信息。",
+  href = "/enter",
+  buttonText = "递交入席意向",
+} = Astro.props;
+---
+
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">ENTER THE SEAT</p>
+      <h2 class="title-serif">{title}</h2>
+      <p>{body}</p>
+    </div>
+    <a class="button dark" href={href}>{buttonText}</a>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: clamp(64px, 10vw, 120px) 0;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .cta-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    border-top: 1px solid var(--line-dark);
+    padding-top: 42px;
+  }
+
+  h2 {
+    max-width: 620px;
+    margin: 8px 0 0;
+    font-size: clamp(2rem, 5vw, 4.6rem);
+    line-height: 1.15;
+  }
+
+  p:not(.eyebrow) {
+    max-width: 520px;
+    margin: 20px 0 0;
+    color: rgba(243, 239, 230, 0.68);
+  }
+
+  @media (max-width: 720px) {
+    .cta-inner { grid-template-columns: 1fr; }
+    .button { width: fit-content; }
+  }
+</style>

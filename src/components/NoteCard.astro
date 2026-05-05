@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { dateFormatter, noteHref } from "../lib/content";
+
+interface Props {
+  note: CollectionEntry<"notes">;
+}
+const { note } = Astro.props;
+---
+
+<article class="note-card">
+  <a href={noteHref(note)}>
+    <div class="image-placeholder">
+      {note.data.cover_image ? <img src={note.data.cover_image} alt={note.data.title} loading="lazy" /> : <span>{note.data.category}</span>}
+    </div>
+    <div class="note-copy">
+      <p class="meta">{dateFormatter.format(note.data.date)} · {note.data.category}</p>
+      <h3 class="title-serif">{note.data.title}</h3>
+      <p>{note.data.summary}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .note-card a {
+    display: grid;
+    gap: 20px;
+  }
+
+  .image-placeholder {
+    min-height: 210px;
+    aspect-ratio: 5 / 3;
+    transition: border-color 180ms ease;
+  }
+
+  a:hover .image-placeholder { border-color: var(--gold); }
+
+  .meta {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    font-size: 1.48rem;
+    line-height: 1.28;
+  }
+
+  .note-copy p:last-child {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

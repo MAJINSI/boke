@@ -1,0 +1,55 @@
+---
+interface Props {
+  brandName: string;
+  footerText: string;
+}
+const { brandName, footerText } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="eyebrow">PRIVATE TEA SALON</p>
+      <p class="brand title-serif">{brandName}</p>
+    </div>
+    <p>{footerText}</p>
+    <p class="fine">© {new Date().getFullYear()} {brandName}. Built with Astro and Decap CMS.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 64px 0 52px;
+    border-top: 1px solid var(--line);
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 32px;
+    align-items: end;
+  }
+
+  .brand {
+    margin: 10px 0 0;
+    font-size: 1.32rem;
+  }
+
+  .footer-grid p { margin: 0; }
+  .fine {
+    color: rgba(243, 239, 230, 0.52);
+    font-family: Georgia, serif;
+    font-size: 0.76rem;
+    text-align: right;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    .fine { text-align: left; }
+  }
+</style>

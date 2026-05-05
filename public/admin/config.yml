@@ -1,0 +1,138 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+locale: zh_Hans
+publish_mode: editorial_workflow
+
+collections:
+  - name: site_settings
+    label: 全站设置
+    files:
+      - label: 站点设置
+        name: site
+        file: src/content/settings/site.md
+        fields:
+          - { label: 品牌名, name: brand_name, widget: string }
+          - { label: Logo, name: logo, widget: image, required: false }
+          - { label: 首页主标题, name: hero_title, widget: string }
+          - { label: 首页副标题, name: hero_subtitle, widget: text }
+          - { label: 首页主视觉, name: hero_image, widget: image, required: false }
+          - { label: 英文小字, name: hero_eyebrow, widget: string }
+          - { label: 主人手记短文, name: host_note, widget: text }
+          - { label: Tally 表单链接, name: tally_form_url, widget: string, required: false }
+          - { label: 微信二维码, name: wechat_qr, widget: image, required: false }
+          - { label: 联系邮箱, name: contact_email, widget: string, required: false }
+          - { label: 页脚文案, name: footer_text, widget: string }
+          - { label: SEO 标题, name: seo_title, widget: string }
+          - { label: SEO 描述, name: seo_description, widget: text }
+
+  - name: home_blocks
+    label: 首页模块
+    folder: src/content/home-blocks
+    create: true
+    slug: "{{fields.order}}-{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 副标题/英文小字, name: subtitle, widget: string, required: false }
+      - { label: 正文, name: body, widget: text, required: false }
+      - { label: 图片, name: image, widget: image, required: false }
+      - label: 排版
+        name: layout
+        widget: select
+        options:
+          - { label: 左文右图, value: left }
+          - { label: 右文左图, value: right }
+          - { label: 通栏文字, value: full }
+      - label: 主题
+        name: theme
+        widget: select
+        options:
+          - { label: 暗色, value: dark }
+          - { label: 浅色, value: light }
+          - { label: 宣纸, value: paper }
+      - { label: 是否显示, name: show, widget: boolean, default: true }
+      - { label: 排序, name: order, widget: number, value_type: int, default: 0 }
+      - { label: 按钮文案, name: button_text, widget: string, required: false }
+      - { label: 按钮链接, name: button_link, widget: string, required: false }
+
+  - name: tea_events
+    label: 茶会
+    folder: src/content/tea-events
+    create: true
+    slug: "{{fields.slug}}"
+    fields:
+      - { label: 茶会名称, name: title, widget: string }
+      - { label: 副标题, name: subtitle, widget: string, required: false }
+      - { label: Slug, name: slug, widget: string }
+      - { label: 季节, name: season, widget: string }
+      - { label: 日期, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: 城市, name: city, widget: string }
+      - { label: 地点说明, name: venue_note, widget: string, required: false }
+      - { label: 席位数, name: seats, widget: string }
+      - { label: 价格, name: price, widget: string }
+      - label: 状态
+        name: status
+        widget: select
+        options:
+          - { label: 候席开放, value: open }
+          - { label: 可候补, value: waitlist }
+          - { label: 已满席, value: full }
+          - { label: 已结束, value: closed }
+      - { label: 状态文案, name: status_label, widget: string }
+      - { label: 茶品, name: tea_types, widget: list, field: { label: 茶品, name: item, widget: string } }
+      - { label: 器物, name: objects, widget: list, required: false, field: { label: 器物, name: item, widget: string } }
+      - { label: 主理人, name: host, widget: string, required: false }
+      - { label: 适合对象, name: suitable_for, widget: list, required: false, field: { label: 对象, name: item, widget: string } }
+      - { label: 简介, name: summary, widget: text }
+      - { label: 茶会介绍摘要, name: description, widget: text, required: false }
+      - { label: 封面图, name: cover_image, widget: image, required: false }
+      - { label: 图集, name: gallery, widget: list, required: false, field: { label: 图片, name: image, widget: image } }
+      - { label: 首页精选, name: featured_on_home, widget: boolean, default: false }
+      - { label: SEO 标题, name: seo_title, widget: string, required: false }
+      - { label: SEO 描述, name: seo_description, widget: text, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: objects
+    label: 器物
+    folder: src/content/objects
+    create: true
+    slug: "{{fields.slug}}"
+    fields:
+      - { label: 器物名, name: name, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - label: 类型
+        name: category
+        widget: select
+        options: [紫砂, 青瓷, 银壶, 柴烧, 香器, 花器, 茶仓, 席布]
+      - { label: 材质, name: material, widget: string }
+      - { label: 来源, name: origin, widget: string, required: false }
+      - { label: 触感, name: texture_note, widget: string }
+      - { label: 使用场景, name: use_case, widget: string }
+      - { label: 图片, name: image, widget: image, required: false }
+      - { label: 描述, name: description, widget: text }
+      - { label: 是否精选, name: featured, widget: boolean, default: false }
+      - { label: 排序, name: order, widget: number, value_type: int, default: 0 }
+
+  - name: notes
+    label: 札记
+    folder: src/content/notes
+    create: true
+    slug: "{{fields.slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: 日期, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - label: 分类
+        name: category
+        widget: select
+        options: [四时茶事, 茶席观察, 器物札记, 主人手记, 城市与茶, 宾客片段]
+      - { label: 摘要, name: summary, widget: text }
+      - { label: 封面图, name: cover_image, widget: image, required: false }
+      - { label: 正文, name: body, widget: markdown }
+      - { label: 是否精选, name: featured, widget: boolean, default: false }
+      - { label: SEO 标题, name: seo_title, widget: string, required: false }
+      - { label: SEO 描述, name: seo_description, widget: text, required: false }

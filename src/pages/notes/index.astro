@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NoteCard from "../../components/NoteCard.astro";
+import SectionShell from "../../components/SectionShell.astro";
+import { byDateDesc, getSetting } from "../../lib/content";
+
+const settings = getSetting(await getCollection("settings"));
+const notes = byDateDesc(await getCollection("notes"));
+const categories = ["四时茶事", "茶席观察", "器物札记", "主人手记", "城市与茶", "宾客片段"];
+---
+
+<BaseLayout title="札记" description="四时茶事、茶席观察、器物札记、主人手记、城市与茶。" brandName={settings?.brand_name} footerText={settings?.footer_text}>
+  <SectionShell eyebrow="NOTES" title="札记" intro="一些不急于成为结论的记录。">
+    <nav class="category-nav" aria-label="札记分类">
+      {categories.map((category) => <a href={`#${category}`}>{category}</a>)}
+    </nav>
+    {categories.map((category) => {
+      const items = notes.filter((note) => note.data.category === category);
+      return items.length ? (
+        <section class="category" id={category}>
+          <h2 class="title-serif">{category}</h2>
+          <div class="note-grid">{items.map((note) => <NoteCard note={note} />)}</div>
+        </section>
+      ) : null;
+    })}
+  </SectionShell>
+</BaseLayout>
+
+<style>
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-bottom: 58px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .category-nav a:hover { color: var(--pu-erh); }
+  .category { margin-top: 64px; scroll-margin-top: 96px; }
+  .category h2 {
+    margin: 0 0 28px;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 400;
+  }
+  .note-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+  }
+  @media (max-width: 900px) {
+    .note-grid { grid-template-columns: 1fr; }
+  }
+</style>

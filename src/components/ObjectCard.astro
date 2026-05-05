@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  object: CollectionEntry<"objects">;
+}
+
+const { object } = Astro.props;
+---
+
+<article class="object-card">
+  <div class="image-placeholder">
+    {object.data.image ? <img src={object.data.image} alt={object.data.name} loading="lazy" /> : <span>{object.data.category}</span>}
+  </div>
+  <div class="object-copy">
+    <p class="eyebrow">{object.data.category}</p>
+    <h3 class="title-serif">{object.data.name}</h3>
+    <p>{object.data.description}</p>
+    <dl>
+      <div><dt>材质</dt><dd>{object.data.material}</dd></div>
+      <div><dt>触感</dt><dd>{object.data.texture_note}</dd></div>
+      <div><dt>使用</dt><dd>{object.data.use_case}</dd></div>
+    </dl>
+  </div>
+</article>
+
+<style>
+  .object-card {
+    display: grid;
+    grid-template-columns: 0.82fr 1fr;
+    gap: 24px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .image-placeholder {
+    min-height: 190px;
+    aspect-ratio: 1;
+  }
+
+  h3 {
+    margin: 8px 0 10px;
+    font-size: 1.48rem;
+    line-height: 1.25;
+  }
+
+  p { margin: 0; color: var(--muted); }
+
+  dl {
+    display: grid;
+    gap: 4px;
+    margin: 18px 0 0;
+    font-size: 0.88rem;
+  }
+
+  div:has(> dt) {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+  }
+
+  dt { color: var(--muted); }
+  dd { margin: 0; }
+
+  @media (max-width: 640px) {
+    .object-card { grid-template-columns: 1fr; }
+    .image-placeholder { aspect-ratio: 4 / 3; }
+  }
+</style>

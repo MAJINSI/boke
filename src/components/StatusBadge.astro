@@ -1,0 +1,38 @@
+---
+interface Props {
+  status: "open" | "waitlist" | "full" | "closed";
+  label: string;
+}
+const { status, label } = Astro.props;
+const map = {
+  open: "可递交入席意向",
+  waitlist: "可候席",
+  full: "当前满席",
+  closed: "本席已结束",
+};
+---
+
+<span class:list={["status", status]} aria-label={`${label}，${map[status]}`}>{label}</span>
+
+<style>
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+  }
+
+  .open { color: var(--celadon); }
+  .waitlist { color: var(--pu-erh); }
+  .full, .closed { color: var(--muted); }
+</style>

@@ -1,0 +1,50 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  brandName?: string;
+  canonical?: string;
+  footerText?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  brandName = "半席",
+  canonical,
+  footerText = "一席茶，留给缓慢抵达的人。",
+  image = "/images/hero-empty-seat.svg",
+} = Astro.props;
+
+const siteTitle = title.includes(brandName) ? title : `${title} | ${brandName}`;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteTitle}</title>
+    <meta name="description" content={description} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <SiteHeader brandName={brandName} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter brandName={brandName} footerText={footerText} />
+  </body>
+</html>

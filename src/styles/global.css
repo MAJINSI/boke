@@ -1,0 +1,127 @@
+:root {
+  --ink: #11100e;
+  --paper: #f3efe6;
+  --pu-erh: #5b3e2a;
+  --celadon: #8a9a8b;
+  --gold: #bfa46a;
+  --text: #2a2824;
+  --muted: #8c867c;
+  --line: rgba(42, 40, 36, 0.16);
+  --line-dark: rgba(243, 239, 230, 0.18);
+  --max: 1120px;
+  --article: 720px;
+  --space: clamp(72px, 11vw, 144px);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--text);
+  font-family: "Noto Serif SC", "Songti SC", system-ui, serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(90deg, rgba(17, 16, 14, 0.025) 1px, transparent 1px),
+    var(--paper);
+  background-size: 48px 48px;
+  line-height: 1.9;
+  text-rendering: optimizeLegibility;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input, textarea, select { font: inherit; }
+
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--max));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title-serif {
+  font-family: "Songti SC", STSong, SimSun, serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.muted { color: var(--muted); }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border: 1px solid currentColor;
+  padding: 0.72rem 1.15rem;
+  color: var(--text);
+  background: transparent;
+  font-size: 0.92rem;
+  line-height: 1;
+  transition: border-color 180ms ease, color 180ms ease, opacity 180ms ease;
+}
+
+.button:hover {
+  color: var(--pu-erh);
+  border-color: var(--gold);
+}
+
+.button.dark { color: var(--paper); }
+
+.image-placeholder {
+  position: relative;
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 70% 20%, rgba(138, 154, 139, 0.24), transparent 34%),
+    linear-gradient(135deg, rgba(91, 62, 42, 0.14), rgba(17, 16, 14, 0.06)),
+    #e7e0d4;
+  aspect-ratio: 4 / 3;
+  color: rgba(42, 40, 36, 0.48);
+  font-size: 0.82rem;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main { overflow: clip; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fade-in 520ms ease both;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (max-width: 720px) {
+  .container { width: min(calc(100% - 28px), var(--max)); }
+  body { line-height: 1.82; }
+}

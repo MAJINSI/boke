@@ -1,0 +1,84 @@
+---
+interface Props {
+  brandName: string;
+  title: string;
+  subtitle: string;
+  eyebrow: string;
+  image?: string;
+}
+
+const { brandName, title, subtitle, eyebrow, image } = Astro.props;
+---
+
+<section class="hero">
+  <div class="container hero-grid fade-in">
+    <div class="hero-copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <p class="brand title-serif">{brandName}</p>
+      <h1 class="title-serif">{title}</h1>
+      <p class="subtitle">{subtitle}</p>
+      <a class="button dark" href="/enter">申请入席</a>
+    </div>
+    <div class="hero-visual image-placeholder" aria-label="空席主视觉">
+      {image ? <img src={image} alt="一方尚未开始的私人茶席" /> : <span>空席</span>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: calc(100svh - 72px);
+    padding: clamp(52px, 8vw, 96px) 0;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(280px, 1.08fr);
+    gap: clamp(36px, 7vw, 92px);
+    align-items: center;
+  }
+
+  .brand {
+    margin: 24px 0 0;
+    color: rgba(243, 239, 230, 0.72);
+  }
+
+  h1 {
+    max-width: 680px;
+    margin: 22px 0 0;
+    font-size: clamp(2.55rem, 7vw, 6rem);
+    line-height: 1.12;
+  }
+
+  .subtitle {
+    max-width: 480px;
+    margin: 24px 0 34px;
+    color: rgba(243, 239, 230, 0.68);
+    font-size: clamp(1rem, 1.7vw, 1.18rem);
+  }
+
+  .hero-visual {
+    min-height: clamp(360px, 56vw, 640px);
+    border-color: var(--line-dark);
+    background:
+      radial-gradient(circle at 46% 34%, rgba(191, 164, 106, 0.16), transparent 22%),
+      linear-gradient(140deg, rgba(138, 154, 139, 0.24), transparent 45%),
+      #191713;
+    color: rgba(243, 239, 230, 0.46);
+  }
+
+  @media (max-width: 820px) {
+    .hero {
+      min-height: auto;
+      padding-top: 56px;
+    }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual {
+      order: -1;
+      min-height: 300px;
+      aspect-ratio: 5 / 4;
+    }
+  }
+</style>

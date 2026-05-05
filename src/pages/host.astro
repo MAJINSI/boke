@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionShell from "../components/SectionShell.astro";
+import { getSetting } from "../lib/content";
+
+const settings = getSetting(await getCollection("settings"));
+const sections = [
+  ["我如何理解茶", "我不把茶会理解为表演。茶在这里不是被解释的对象，而是让时间安静下来的方法。"],
+  ["我如何布置一席", "水、器、香、光、人声，逐渐归位。席面不为热闹服务，只为让人慢下来。"],
+  ["我如何选择器物", "器物首先要能被手理解。它的重量、温度、边缘与留白，会决定一席的语气。"],
+  ["我如何接待来客", "当一席开始，主人的责任不是解释茶，而是让人重新感到自己的存在。"],
+];
+---
+
+<BaseLayout title="主人" description="主人如何理解茶、布置一席、选择器物并接待来客。" brandName={settings?.brand_name} footerText={settings?.footer_text}>
+  <SectionShell eyebrow="HOST" title="主人" intro="我不把茶会理解为表演。">
+    <div class="host-intro title-serif">
+      <p>它更接近一次短暂的秩序重建：水、器、香、光、人声，逐渐归位。</p>
+      <p>当一席开始，主人的责任不是解释茶，而是让人重新感到自己的存在。</p>
+    </div>
+    <div class="host-grid">
+      {sections.map(([title, body]) => (
+        <article>
+          <span></span>
+          <h2 class="title-serif">{title}</h2>
+          <p>{body}</p>
+        </article>
+      ))}
+    </div>
+  </SectionShell>
+</BaseLayout>
+
+<style>
+  .host-intro {
+    max-width: 760px;
+    margin-bottom: 72px;
+    font-size: clamp(1.46rem, 3vw, 2.5rem);
+    line-height: 1.82;
+  }
+  .host-intro p { margin: 0 0 0.8em; }
+  .host-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    border: 1px solid var(--line);
+    background: var(--line);
+  }
+  article {
+    min-height: 260px;
+    padding: clamp(28px, 4vw, 48px);
+    background: var(--paper);
+  }
+  article span {
+    display: block;
+    width: 38px;
+    height: 1px;
+    background: var(--gold);
+  }
+  h2 {
+    margin: 32px 0 12px;
+    font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+    font-weight: 400;
+  }
+  article p { margin: 0; color: var(--muted); }
+  @media (max-width: 760px) {
+    .host-grid { grid-template-columns: 1fr; }
+  }
+</style>

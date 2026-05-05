@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ObjectCard from "../components/ObjectCard.astro";
+import SectionShell from "../components/SectionShell.astro";
+import { byOrder, getSetting } from "../lib/content";
+
+const settings = getSetting(await getCollection("settings"));
+const objects = byOrder(await getCollection("objects"));
+const categories = ["紫砂", "青瓷", "银壶", "柴烧", "香器", "花器", "茶仓", "席布"];
+---
+
+<BaseLayout title="器物" description="紫砂、青瓷、银壶、柴烧、香器、花器、茶仓与席布。" brandName={settings?.brand_name} footerText={settings?.footer_text}>
+  <SectionShell eyebrow="OBJECTS" title="器物" intro="器不是装饰，是身体的尺度。">
+    <nav class="category-nav" aria-label="器物分类">
+      {categories.map((category) => <a href={`#${category}`}>{category}</a>)}
+    </nav>
+    {categories.map((category) => {
+      const items = objects.filter((object) => object.data.category === category);
+      return items.length ? (
+        <section class="category" id={category}>
+          <h2 class="title-serif">{category}</h2>
+          <div class="object-grid">{items.map((object) => <ObjectCard object={object} />)}</div>
+        </section>
+      ) : null;
+    })}
+  </SectionShell>
+</BaseLayout>
+
+<style>
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-bottom: 58px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .category-nav a:hover { color: var(--pu-erh); }
+  .category { margin-top: 64px; scroll-margin-top: 96px; }
+  .category h2 {
+    margin: 0 0 28px;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 400;
+  }
+  .object-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 42px;
+  }
+  @media (max-width: 820px) {
+    .object-grid { grid-template-columns: 1fr; }
+  }
+</style>

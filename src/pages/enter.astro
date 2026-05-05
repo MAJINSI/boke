@@ -1,0 +1,15 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionShell from "../components/SectionShell.astro";
+import TallyEmbed from "../components/TallyEmbed.astro";
+import { getSetting } from "../lib/content";
+
+const settings = getSetting(await getCollection("settings"));
+---
+
+<BaseLayout title="申请入席" description="茶席有限。递交意向后，将根据茶会主题、席位与时间发送确认信息。" brandName={settings?.brand_name} footerText={settings?.footer_text}>
+  <SectionShell eyebrow="ENTER" title="申请入席" intro="茶席有限。递交意向后，将根据茶会主题、席位与时间发送确认信息。">
+    <TallyEmbed tallyUrl={settings?.tally_form_url} />
+  </SectionShell>
+</BaseLayout>

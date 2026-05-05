@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">四时札记占位图</title>
+  <desc id="desc">四时茶事的低饱和占位视觉</desc>
+  <rect width="1200" height="800" fill="#F3EFE6"/>
+  <rect x="120" y="100" width="960" height="600" fill="#EFE8DB" stroke="#2A2824" stroke-opacity=".12"/>
+  <path d="M260 500c120-210 250-245 390-104s234 100 306-44" fill="none" stroke="#8A9A8B" stroke-width="22" stroke-linecap="round" opacity=".42"/>
+  <path d="M326 276h548M326 356h384M326 436h472" stroke="#BFA46A" stroke-opacity=".36"/>
+  <text x="600" y="642" fill="#8C867C" text-anchor="middle" font-family="Georgia,serif" font-size="24" letter-spacing="8">SEASON NOTE</text>
+</svg>

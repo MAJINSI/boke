@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">紫砂器物占位图</title>
+  <desc id="desc">紫砂壶抽象占位视觉</desc>
+  <rect width="1200" height="800" fill="#F3EFE6"/>
+  <rect x="96" y="82" width="1008" height="636" fill="#E5DCCE" stroke="#2A2824" stroke-opacity=".12"/>
+  <path d="M412 418c22-96 344-96 366 0 22 104-54 164-184 164s-204-60-182-164Z" fill="#5B3E2A" opacity=".62"/>
+  <path d="M766 414c116-12 156 70 56 116" fill="none" stroke="#5B3E2A" stroke-width="36" stroke-linecap="round" opacity=".56"/>
+  <path d="M410 418c-96-20-130 44-174 54" fill="none" stroke="#5B3E2A" stroke-width="28" stroke-linecap="round" opacity=".52"/>
+  <rect x="540" y="248" width="126" height="66" rx="28" fill="#5B3E2A" opacity=".6"/>
+  <text x="600" y="662" fill="#8C867C" text-anchor="middle" font-family="Georgia,serif" font-size="24" letter-spacing="8">ZISHA OBJECTS</text>
+</svg>

@@ -1,0 +1,133 @@
+---
+interface Props {
+  brandName: string;
+}
+
+const { brandName } = Astro.props;
+const nav = [
+  ["首页", "/"],
+  ["茶会", "/tea-events"],
+  ["主人", "/host"],
+  ["器物", "/objects"],
+  ["札记", "/notes"],
+  ["入席", "/enter"],
+];
+---
+
+<header class="site-header">
+  <a class="skip-link" href="#main">跳至正文</a>
+  <div class="header-inner">
+    <a class="brand title-serif" href="/" aria-label={`${brandName}首页`}>{brandName}</a>
+    <nav aria-label="主导航">
+      <details class="nav-details">
+        <summary aria-label="打开导航">菜单</summary>
+        <div class="nav-list">
+          {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+        </div>
+      </details>
+      <div class="nav-list desktop">
+        {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(42, 40, 36, 0.1);
+    background: rgba(243, 239, 230, 0.88);
+    backdrop-filter: blur(14px);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(calc(100% - 40px), var(--max));
+    min-height: 72px;
+    margin-inline: auto;
+    gap: 24px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 16px;
+    top: -80px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 12px;
+  }
+
+  .skip-link:focus { top: 12px; }
+
+  .brand {
+    font-size: 1.18rem;
+    color: var(--ink);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 34px);
+    color: var(--text);
+    font-size: 0.92rem;
+  }
+
+  .nav-list a {
+    opacity: 0.82;
+    transition: opacity 160ms ease, color 160ms ease;
+  }
+
+  .nav-list a:hover {
+    color: var(--pu-erh);
+    opacity: 1;
+  }
+
+  .nav-details { display: none; }
+
+  @media (max-width: 720px) {
+    .header-inner {
+      width: min(calc(100% - 28px), var(--max));
+      min-height: 64px;
+    }
+
+    .desktop { display: none; }
+    .nav-details {
+      display: block;
+      position: relative;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      color: var(--text);
+      font-size: 0.86rem;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    .nav-details .nav-list {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 12px);
+      display: grid;
+      width: 148px;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 18px 40px rgba(17, 16, 14, 0.12);
+    }
+
+    .nav-details .nav-list a {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-details .nav-list a:last-child { border-bottom: 0; }
+  }
+</style>

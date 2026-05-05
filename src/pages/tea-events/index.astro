@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTASection from "../../components/CTASection.astro";
+import SectionShell from "../../components/SectionShell.astro";
+import TeaEventCard from "../../components/TeaEventCard.astro";
+import { byDateDesc, getSetting } from "../../lib/content";
+
+const settings = getSetting(await getCollection("settings"));
+const events = byDateDesc(await getCollection("teaEvents"));
+---
+
+<BaseLayout title="四时茶会" description="每一席只接待少数来客。茶、器、席、光与空间，在开始前已经完成选择。" brandName={settings?.brand_name} footerText={settings?.footer_text}>
+  <SectionShell eyebrow="SEASONAL TEA SALON" title="四时茶会" intro="每一席只接待少数来客。茶、器、席、光与空间，在开始前已经完成选择。">
+    <div class="event-grid">
+      {events.map((event) => <TeaEventCard event={event} />)}
+    </div>
+  </SectionShell>
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  @media (max-width: 900px) {
+    .event-grid { grid-template-columns: 1fr; }
+  }
+</style>

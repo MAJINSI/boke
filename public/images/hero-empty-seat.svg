@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">空席占位图</title>
+  <desc id="desc">低饱和的私人茶席空位视觉占位</desc>
+  <rect width="1200" height="900" fill="#11100E"/>
+  <rect x="132" y="126" width="936" height="648" fill="#171510" stroke="#BFA46A" stroke-opacity=".34"/>
+  <circle cx="602" cy="455" r="120" fill="#F3EFE6" opacity=".08"/>
+  <circle cx="602" cy="455" r="72" fill="none" stroke="#F3EFE6" stroke-opacity=".34"/>
+  <path d="M310 456h584" stroke="#BFA46A" stroke-opacity=".42"/>
+  <text x="600" y="720" fill="#F3EFE6" fill-opacity=".42" text-anchor="middle" font-family="Georgia,serif" font-size="28" letter-spacing="9">EMPTY SEAT</text>
+</svg>
