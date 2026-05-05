@@ -53,13 +53,23 @@
       <p>正在打开设置密码窗口。若窗口没有自动出现，请点击下方按钮。</p>
       <button type="button" id="identity-open-button">打开设置密码窗口</button>
     </div>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       (() => {
         const tokenSource = `${window.location.search || ""}${window.location.hash || ""}`;
         const hasIdentityToken = /(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(tokenSource);
         const fallback = document.getElementById("identity-token-fallback");
         const openButton = document.getElementById("identity-open-button");
+
+        const loadCms = () => {
+          if (document.querySelector("script[data-decap-cms]")) {
+            return;
+          }
+
+          const script = document.createElement("script");
+          script.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
+          script.dataset.decapCms = "true";
+          document.body.appendChild(script);
+        };
 
         const openIdentity = () => {
           if (window.netlifyIdentity) {
@@ -87,6 +97,10 @@
               });
             }
           });
+        }
+
+        if (!hasIdentityToken) {
+          loadCms();
         }
       })();
     </script>
