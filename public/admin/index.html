@@ -6,8 +6,89 @@
     <meta name="robots" content="noindex" />
     <title>半席内容后台</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #f3efe6;
+        color: #2a2824;
+        font-family: "Noto Serif SC", "Songti SC", system-ui, serif;
+      }
+
+      .identity-fallback {
+        box-sizing: border-box;
+        width: min(560px, calc(100vw - 40px));
+        margin: 18vh auto 0;
+        padding: 32px;
+        border: 1px solid rgba(17, 16, 14, 0.14);
+        background: rgba(243, 239, 230, 0.86);
+      }
+
+      .identity-fallback[hidden] {
+        display: none;
+      }
+
+      .identity-fallback p {
+        margin: 0 0 18px;
+        line-height: 1.9;
+      }
+
+      .identity-fallback button,
+      .identity-fallback a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 18px;
+        border: 1px solid #5b3e2a;
+        background: transparent;
+        color: #11100e;
+        cursor: pointer;
+        font: inherit;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
+    <div class="identity-fallback" id="identity-token-fallback" hidden>
+      <p>正在打开设置密码窗口。若窗口没有自动出现，请点击下方按钮。</p>
+      <button type="button" id="identity-open-button">打开设置密码窗口</button>
+    </div>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      (() => {
+        const tokenSource = `${window.location.search || ""}${window.location.hash || ""}`;
+        const hasIdentityToken = /(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(tokenSource);
+        const fallback = document.getElementById("identity-token-fallback");
+        const openButton = document.getElementById("identity-open-button");
+
+        const openIdentity = () => {
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.open();
+          }
+        };
+
+        if (hasIdentityToken && fallback) {
+          fallback.hidden = false;
+        }
+
+        if (openButton) {
+          openButton.addEventListener("click", openIdentity);
+        }
+
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (hasIdentityToken) {
+              openIdentity();
+            }
+
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                window.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

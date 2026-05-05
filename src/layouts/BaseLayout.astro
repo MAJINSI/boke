@@ -39,6 +39,16 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : Ast
     <meta property="og:image" content={image} />
     <meta property="og:locale" content="zh_CN" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (() => {
+        const tokenSource = `${window.location.search || ""}${window.location.hash || ""}`;
+        const hasIdentityToken = /(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(tokenSource);
+
+        if (hasIdentityToken && !window.location.pathname.startsWith("/admin")) {
+          window.location.replace(`/admin/${window.location.search || ""}${window.location.hash || ""}`);
+        }
+      })();
+    </script>
   </head>
   <body>
     <SiteHeader brandName={brandName} />
@@ -46,24 +56,5 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : Ast
       <slot />
     </main>
     <SiteFooter brandName={brandName} footerText={footerText} />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script is:inline>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          const hash = window.location.hash || "";
-          const hasIdentityToken = hash.includes("invite_token=") || hash.includes("recovery_token=");
-
-          if (hasIdentityToken) {
-            window.netlifyIdentity.open();
-          }
-
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              window.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
