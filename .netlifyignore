@@ -1,0 +1,7 @@
+node_modules/
+.npm-cache/
+dist/
+.astro/
+.git/
+.DS_Store
+npm-debug.log*
