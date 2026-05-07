@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.18"/></feComponentTransfer>
+    </filter></defs>
+  
+    <rect width="1600" height="1200" fill="#F3EFE6"/>
+    <rect width="1600" height="1200" fill="#DFD6C5" opacity="0.22" filter="url(#grain)"/>
+    <path d="M128,192 C512,36 1152,108 1504,24" fill="none" stroke="#8A9A8B" stroke-width="1.2" opacity="0.18"/>
+    <path d="M32,983.9999999999999 C416,864 992,1116 1568,912" fill="none" stroke="#5B3E2A" stroke-width="1" opacity="0.12"/>
+  <rect x="88" y="84.00000000000001" width="1424" height="936" fill="none" stroke="#11100E" stroke-width="1" opacity="0.1"/>
+  
+    <line x1="192" y1="660" x2="1408" y2="660" stroke="#5B3E2A" stroke-width="2" opacity="0.24"/>
+    
+    <ellipse cx="576" cy="588" rx="191.88" ry="53.72639999999999" fill="#EEE8DC" stroke="#11100E" stroke-width="5.756399999999999" opacity="0.96"/>
+    <path d="M407.1456,588 C432.7296,754.296 719.2704,754.296 744.8543999999999,588 Z" fill="#EEE8DC" stroke="#11100E" stroke-width="5.756399999999999" opacity="0.94"/>
+    <ellipse cx="576" cy="584.1624" rx="138.15359999999998" ry="28.1424" fill="#5B3E2A" opacity="0.35"/>
+    
+    <ellipse cx="832" cy="600" rx="163.79999999999998" ry="45.86399999999999" fill="#D8D1C4" stroke="#11100E" stroke-width="4.914" opacity="0.96"/>
+    <path d="M687.856,600 C709.696,741.96 954.304,741.96 976.144,600 Z" fill="#D8D1C4" stroke="#11100E" stroke-width="4.914" opacity="0.94"/>
+    <ellipse cx="832" cy="596.724" rx="117.93599999999999" ry="24.023999999999997" fill="#5B3E2A" opacity="0.35"/>
+    
+    <ellipse cx="1088" cy="588" rx="191.88" ry="53.72639999999999" fill="#A4B3A5" stroke="#11100E" stroke-width="5.756399999999999" opacity="0.96"/>
+    <path d="M919.1456000000001,588 C944.7296,754.296 1231.2703999999999,754.296 1256.8544,588 Z" fill="#A4B3A5" stroke="#11100E" stroke-width="5.756399999999999" opacity="0.94"/>
+    <ellipse cx="1088" cy="584.1624" rx="138.15359999999998" ry="28.1424" fill="#5B3E2A" opacity="0.35"/>
+  
+</svg>

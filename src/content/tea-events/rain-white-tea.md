@@ -22,9 +22,11 @@ suitable_for:
   - 对白茶年份有兴趣的人
 summary: 雨前的夜，借一盏白茶把谈话放慢。
 description: 一席围绕新白茶与老白茶的温差展开，少量点心，只保留必要的声音。
-cover_image: /images/tea-soup.svg
+cover_image: /uploads/brand-assets/tea-event-rain-white-tea-cover.jpg
 gallery:
-  - /images/hero-empty-seat.svg
+  - /uploads/brand-assets/gallery-rain-white-tea-01.jpg
+  - /uploads/brand-assets/gallery-rain-white-tea-02.jpg
+  - /uploads/brand-assets/gallery-rain-white-tea-03.jpg
 featured_on_home: true
 seo_title: 雨前白茶夜席
 seo_description: 上海春席，白茶与老白茶，一席六人，候席开放。

@@ -4,7 +4,7 @@ slug: spring-before-seat
 date: 2026-03-22
 category: 四时茶事
 summary: 春天的茶席不必急着明亮，水声会先把空间调低。
-cover_image: /images/note-season.svg
+cover_image: /uploads/brand-assets/note-spring-before-seat-cover.jpg
 featured: true
 seo_title: 春席之前，先听水声
 seo_description: 关于春席、水声与入席之前的短札。

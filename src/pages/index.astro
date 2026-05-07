@@ -24,14 +24,14 @@ const homeBlocks = byOrder((await getCollection("homeBlocks")).filter((block) =>
   description={settings?.seo_description ?? "私人茶席、器物审美与东方生活方式体验。"}
   brandName={settings?.brand_name}
   footerText={settings?.footer_text}
-  image={settings?.hero_image || "/images/hero-empty-seat.svg"}
+  image={settings?.hero_image || "/uploads/brand-assets/hero-empty-seat.jpg"}
 >
   <Hero
     brandName={settings?.brand_name ?? "半席"}
     title={settings?.hero_title ?? "一席茶，安放一段不被打扰的时间。"}
     subtitle={settings?.hero_subtitle ?? "私人茶席、器物审美与东方生活方式体验。"}
     eyebrow={settings?.hero_eyebrow ?? "PRIVATE TEA SALON"}
-    image={settings?.hero_image || "/images/hero-empty-seat.svg"}
+    image={settings?.hero_image || "/uploads/brand-assets/hero-empty-seat.jpg"}
   />
 
   <SectionShell eyebrow="BEFORE ENTERING" title="入席之前" intro="这里不是茶的说明书，而是一处尚未开始的席面。">

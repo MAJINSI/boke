@@ -15,6 +15,9 @@ const sections = [
 
 <BaseLayout title="主人" description="主人如何理解茶、布置一席、选择器物并接待来客。" brandName={settings?.brand_name} footerText={settings?.footer_text}>
   <SectionShell eyebrow="HOST" title="主人" intro="我不把茶会理解为表演。">
+    <figure class="host-image">
+      <img src="/uploads/brand-assets/host-hands-and-seat.jpg" alt="主人布置茶席时的手、杯与席面" width="1600" height="1200" loading="eager" />
+    </figure>
     <div class="host-intro title-serif">
       <p>它更接近一次短暂的秩序重建：水、器、香、光、人声，逐渐归位。</p>
       <p>当一席开始，主人的责任不是解释茶，而是让人重新感到自己的存在。</p>
@@ -37,6 +40,19 @@ const sections = [
     margin-bottom: 72px;
     font-size: clamp(1.46rem, 3vw, 2.5rem);
     line-height: 1.82;
+  }
+  .host-image {
+    margin: 0 0 72px;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .host-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .host-intro p { margin: 0 0 0.8em; }
   .host-grid {

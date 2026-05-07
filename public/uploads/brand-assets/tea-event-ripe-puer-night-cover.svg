@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.12"/></feComponentTransfer>
+    </filter></defs>
+  
+    <rect width="1600" height="1200" fill="#11100E"/>
+    <rect width="1600" height="1200" fill="#5B3E2A" opacity="0.16" filter="url(#grain)"/>
+    <path d="M128,192 C512,36 1152,108 1504,24" fill="none" stroke="#BFA46A" stroke-width="1.2" opacity="0.18"/>
+    <path d="M32,983.9999999999999 C416,864 992,1116 1568,912" fill="none" stroke="#8A9A8B" stroke-width="1" opacity="0.12"/>
+  <rect x="88" y="84.00000000000001" width="1424" height="936" fill="none" stroke="#BFA46A" stroke-width="1" opacity="0.18"/>
+  
+    <ellipse cx="880.0000000000001" cy="576" rx="315.90000000000003" ry="88.45200000000001" fill="#5B3E2A" stroke="#F3EFE6" stroke-width="9.477" opacity="0.96"/>
+    <path d="M602.008,576 C644.128,849.78 1115.872,849.78 1157.9920000000002,576 Z" fill="#5B3E2A" stroke="#F3EFE6" stroke-width="9.477" opacity="0.94"/>
+    <ellipse cx="880.0000000000001" cy="569.682" rx="227.44800000000004" ry="46.33200000000001" fill="#5B3E2A" opacity="0.35"/>
+  
+</svg>

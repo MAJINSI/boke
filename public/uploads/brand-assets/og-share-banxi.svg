@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.18"/></feComponentTransfer>
+    </filter></defs>
+  
+    <rect width="1200" height="630" fill="#F3EFE6"/>
+    <rect width="1200" height="630" fill="#DFD6C5" opacity="0.22" filter="url(#grain)"/>
+    <path d="M96,100.8 C384,18.9 864,56.699999999999996 1128,12.6" fill="none" stroke="#8A9A8B" stroke-width="1.2" opacity="0.18"/>
+    <path d="M24,516.6 C312,453.59999999999997 744,585.9 1176,478.8" fill="none" stroke="#5B3E2A" stroke-width="1" opacity="0.12"/>
+  <rect x="66" y="44.1" width="1068" height="491.40000000000003" fill="none" stroke="#11100E" stroke-width="1" opacity="0.1"/>
+  
+    <line x1="144" y1="365.4" x2="1056" y2="365.4" stroke="#5B3E2A" stroke-width="2" opacity="0.24"/>
+    
+    <ellipse cx="600" cy="302.4" rx="122.85000000000001" ry="34.398" fill="#EEE8DC" stroke="#11100E" stroke-width="3.6855" opacity="0.96"/>
+    <path d="M491.892,302.4 C508.272,408.87 691.7280000000001,408.87 708.1080000000001,302.4 Z" fill="#EEE8DC" stroke="#11100E" stroke-width="3.6855" opacity="0.94"/>
+    <ellipse cx="600" cy="299.943" rx="88.45200000000001" ry="18.018" fill="#5B3E2A" opacity="0.35"/>
+  <text x="96" y="270.9" fill="#11100E" font-family="Songti SC, STSong, SimSun, serif" font-size="116">半席</text>
+    <g opacity="0.78">
+      <text x="96" y="541.8" fill="#2A2824" font-family="Songti SC, STSong, SimSun, serif" font-size="44.4" letter-spacing="0">半席</text>
+      <text x="96" y="573.3000000000001" fill="#8C867C" font-family="Georgia, serif" font-size="18" letter-spacing="2">一席茶，安放一段不被打扰的时间。</text>
+    </g>
+</svg>

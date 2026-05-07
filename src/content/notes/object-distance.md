@@ -4,7 +4,7 @@ slug: object-distance
 date: 2026-02-10
 category: 器物札记
 summary: 席面上的距离不是装饰问题，而是身体如何进入茶席的问题。
-cover_image: /images/objects-zisha.svg
+cover_image: /uploads/brand-assets/note-object-distance-cover.jpg
 featured: true
 seo_title: 器物之间的距离
 seo_description: 一篇关于席面器物、距离与身体尺度的札记。

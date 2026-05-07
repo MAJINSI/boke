@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1067" viewBox="0 0 1600 1067">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.18"/></feComponentTransfer>
+    </filter></defs>
+  
+    <rect width="1600" height="1067" fill="#F3EFE6"/>
+    <rect width="1600" height="1067" fill="#DFD6C5" opacity="0.22" filter="url(#grain)"/>
+    <path d="M128,170.72 C512,32.01 1152,96.03 1504,21.34" fill="none" stroke="#8A9A8B" stroke-width="1.2" opacity="0.18"/>
+    <path d="M32,874.9399999999999 C416,768.24 992,992.3100000000001 1568,810.92" fill="none" stroke="#5B3E2A" stroke-width="1" opacity="0.12"/>
+  <rect x="88" y="74.69000000000001" width="1424" height="832.26" fill="none" stroke="#11100E" stroke-width="1" opacity="0.1"/>
+  
+    <path d="M720.4835,512.16 C744.4109750000001,397.30812 1015.5890250000001,397.30812 1039.5165000000002,512.16 C1015.5890250000001,655.72485 744.4109750000001,655.72485 720.4835,512.16 Z" fill="#D8D3C7" stroke="#2A2824" stroke-width="7.1782425000000005" opacity="0.9"/>
+    <path d="M765.1481200000001,451.54373 C832.1450500000001,327.12086 927.8549500000001,327.12086 994.8518800000002,451.54373" fill="none" stroke="#2A2824" stroke-width="9.57099" opacity="0.72"/>
+    <path d="M1031.5406750000002,504.184175 C1111.298925,480.25669999999997 1143.202225,524.9213199999999 1176.7006900000001,550.44396" fill="none" stroke="#2A2824" stroke-width="9.57099" opacity="0.72"/>
+  
+</svg>

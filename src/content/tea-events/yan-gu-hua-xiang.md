@@ -21,9 +21,11 @@ suitable_for:
   - 想理解岩茶层次的人
 summary: 一席岩茶，试着在暑气中保留骨力。
 description: 从轻火到中足火，观察香气如何经过杯壁、喉间与身体。
-cover_image: /images/hand-and-cup.svg
+cover_image: /uploads/brand-assets/tea-event-yan-gu-hua-xiang-cover.jpg
 gallery:
-  - /images/objects-zisha.svg
+  - /uploads/brand-assets/gallery-yan-gu-hua-xiang-01.jpg
+  - /uploads/brand-assets/gallery-yan-gu-hua-xiang-02.jpg
+  - /uploads/brand-assets/gallery-yan-gu-hua-xiang-03.jpg
 featured_on_home: true
 seo_title: 岩骨花香小席
 seo_description: 杭州夏席，武夷岩茶，一席六人，余二席。

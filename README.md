@@ -29,6 +29,7 @@ public/
   admin/              Decap CMS 后台
   images/             本地占位视觉
   uploads/            CMS 上传图片目录
+    brand-assets/     当前品牌视觉资产
 src/
   components/         页面组件
   content/
@@ -133,7 +134,20 @@ Decap CMS 使用 `git-gateway`，内容会写入仓库中的 Markdown 文件。�
 - 避免使用外链图片
 - 避免水墨素材、装饰性边框、伪古风元素和夸张字体
 
-项目自带 `public/images` 下的 SVG 占位视觉。没有真实图片时不会出现破图。
+当前品牌资产已生成在 `public/uploads/brand-assets`，清单见 `public/uploads/brand-assets/ASSET-MANIFEST.md`。大图同时提供 JPG / WebP，Logo 提供 SVG / PNG。
+
+主要文件：
+
+- `logo-main.svg` / `logo-main.png`：800 x 800 主标识
+- `logo-header.svg` / `logo-header.png`：240 x 240 页眉小标识
+- `hero-empty-seat.jpg`：2400 x 1600 首页首屏
+- `tea-event-*-cover.jpg`：1600 x 1200 茶会封面
+- `gallery-*.jpg`：1600 x 1067 茶会图集
+- `object-*.jpg`：1400 x 1400 器物图片
+- `note-*-cover.jpg`：1600 x 1000 札记封面
+- `host-hands-and-seat.jpg`：1600 x 1200 主人页图片
+- `wechat-qr-placeholder.png`：800 x 800 微信二维码占位，需替换为真实二维码
+- `og-share-banxi.jpg`：1200 x 630 Open Graph 分享图
 
 ## 设计系统
 

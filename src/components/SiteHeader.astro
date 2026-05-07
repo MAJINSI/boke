@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { brandName } = Astro.props;
+const logo = "/uploads/brand-assets/logo-header.svg";
 const nav = [
   ["首页", "/"],
   ["茶会", "/tea-events"],
@@ -17,7 +18,10 @@ const nav = [
 <header class="site-header">
   <a class="skip-link" href="#main">跳至正文</a>
   <div class="header-inner">
-    <a class="brand title-serif" href="/" aria-label={`${brandName}首页`}>{brandName}</a>
+    <a class="brand title-serif" href="/" aria-label={`${brandName}首页`}>
+      <img src={logo} alt="" width="36" height="36" />
+      <span>{brandName}</span>
+    </a>
     <nav aria-label="主导航">
       <details class="nav-details">
         <summary aria-label="打开导航">菜单</summary>
@@ -64,8 +68,17 @@ const nav = [
   .skip-link:focus { top: 12px; }
 
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1.18rem;
     color: var(--ink);
+  }
+
+  .brand img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
   }
 
   .nav-list {

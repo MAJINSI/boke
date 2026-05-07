@@ -22,8 +22,11 @@ suitable_for:
   - 对普洱仓储与转化有兴趣的人
 summary: 已满席。冬夜以熟普收束，留给少数来客。
 description: 围绕熟普与陈年普洱，讨论仓储、温度和身体感受。
-cover_image: /images/tea-soup.svg
-gallery: []
+cover_image: /uploads/brand-assets/tea-event-ripe-puer-night-cover.jpg
+gallery:
+  - /uploads/brand-assets/gallery-ripe-puer-night-01.jpg
+  - /uploads/brand-assets/gallery-ripe-puer-night-02.jpg
+  - /uploads/brand-assets/gallery-ripe-puer-night-03.jpg
 featured_on_home: true
 seo_title: 熟普深夜席
 seo_description: 北京冬席，熟普与陈年普洱，一席四人，已满席。

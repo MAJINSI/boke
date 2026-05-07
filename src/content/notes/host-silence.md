@@ -4,7 +4,7 @@ slug: host-silence
 date: 2026-01-18
 category: 主人手记
 summary: 茶席中，主人的沉默有时比说明更准确。
-cover_image: /images/hero-empty-seat.svg
+cover_image: /uploads/brand-assets/note-host-silence-cover.jpg
 featured: true
 seo_title: 主人少说一点
 seo_description: 主人手记：关于沉默、说明与接待来客。

@@ -4,7 +4,7 @@ slug: city-and-tea
 date: 2025-12-08
 category: 城市与茶
 summary: 在城市里留出一席茶，是把时间从效率里暂时取回。
-cover_image: /images/hand-and-cup.svg
+cover_image: /uploads/brand-assets/note-city-and-tea-cover.jpg
 featured: false
 seo_title: 城市里的短暂停顿
 seo_description: 关于城市、茶与短暂停顿的札记。
