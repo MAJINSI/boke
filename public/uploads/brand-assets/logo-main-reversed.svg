@@ -1,7 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="半席">
-  <path d="M170 118 C120 134 122 210 130 282 C122 376 116 489 140 610 C153 676 206 700 280 690 C356 710 448 702 522 694 C622 708 678 670 688 590 C704 485 690 381 694 285 C706 195 678 126 606 120 C492 102 378 116 268 108 C232 106 199 108 170 118 Z" fill="#F3EFE6"/>
-  <path d="M246 214 C302 198 350 214 384 260 C412 202 484 184 554 212 C506 262 466 314 444 388 C428 444 432 512 464 570 C424 560 394 530 382 492 C356 540 318 570 260 578 C304 522 314 454 294 392 C272 323 230 270 184 226 C206 216 226 210 246 214 Z" fill="#11100E"/>
-  <path d="M270 602 H530" stroke="#11100E" stroke-width="18" stroke-linecap="round" opacity="0.86"/>
-  <text x="400" y="652" text-anchor="middle" fill="#11100E" font-family="Songti SC, STSong, SimSun, serif" font-size="118" font-weight="600" letter-spacing="6">半席</text>
-  <path d="M70 70 H730 V730 H70 Z" fill="none" stroke="#F3EFE6" stroke-width="0"/>
-</svg>
+    <rect width="800" height="800" fill="none"/>
+    <g transform="translate(98 120)">
+      <text x="0" y="260" fill="#F8F4EA" font-family="Songti SC, STSong, SimSun, serif" font-size="210" letter-spacing="34">半席</text>
+      <line x1="8" y1="330" x2="560" y2="330" stroke="#F8F4EA" stroke-width="3" opacity="0.82"/>
+      <text x="8" y="390" fill="#D8CDBB" font-family="Georgia, serif" font-size="34" letter-spacing="9">PRIVATE TEA SALON</text>
+      <text x="8" y="458" fill="#D8CDBB" font-family="Songti SC, STSong, SimSun, serif" font-size="30" letter-spacing="6">一席茶，安放一段不被打扰的时间。</text>
+      <path d="M488 112 H602 V226 H488 Z" fill="none" stroke="#F8F4EA" stroke-width="5"/>
+      <path d="M520 158 H570 M545 132 V204" stroke="#F8F4EA" stroke-width="10" stroke-linecap="square"/>
+    </g>
+  </svg>

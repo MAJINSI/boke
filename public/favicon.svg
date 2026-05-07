@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="半席">
-  <path d="M170 118 C120 134 122 210 130 282 C122 376 116 489 140 610 C153 676 206 700 280 690 C356 710 448 702 522 694 C622 708 678 670 688 590 C704 485 690 381 694 285 C706 195 678 126 606 120 C492 102 378 116 268 108 C232 106 199 108 170 118 Z" fill="#11100E"/>
-  <path d="M246 214 C302 198 350 214 384 260 C412 202 484 184 554 212 C506 262 466 314 444 388 C428 444 432 512 464 570 C424 560 394 530 382 492 C356 540 318 570 260 578 C304 522 314 454 294 392 C272 323 230 270 184 226 C206 216 226 210 246 214 Z" fill="#F3EFE6"/>
-  <path d="M270 602 H530" stroke="#F3EFE6" stroke-width="18" stroke-linecap="round" opacity="0.86"/>
-  <text x="400" y="652" text-anchor="middle" fill="#F3EFE6" font-family="Songti SC, STSong, SimSun, serif" font-size="118" font-weight="600" letter-spacing="6">半席</text>
-  <path d="M70 70 H730 V730 H70 Z" fill="none" stroke="#11100E" stroke-width="0"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="半席">
+      <rect width="240" height="240" fill="none"/>
+      <path d="M50 42 H190 V198 H50 Z" fill="#11100E"/>
+      <text x="120" y="105" text-anchor="middle" fill="#F3EFE6" font-family="Songti SC, STSong, SimSun, serif" font-size="66" font-weight="600">半</text>
+      <text x="120" y="168" text-anchor="middle" fill="#F3EFE6" font-family="Songti SC, STSong, SimSun, serif" font-size="66" font-weight="600">席</text>
+    </svg>
